@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>VPN Extension</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free VPN - Settings</title>
+  <link rel="stylesheet" href="settings.css">
 </head>
-<body>
-    <!-- Your HTML content here -->
+<body class="dark-mode">
+  <div class="container">
+    <h1>Settings</h1>
+    
+    <div class="settings-section">
+      <h2>Connection</h2>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="autoConnect">
+          Auto-connect on browser start
+        </label>
+        <p class="setting-desc">Automatically connect to last used server when browser launches</p>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="enableWebRTCBlocking" checked>
+          Block WebRTC leaks
+        </label>
+        <p class="setting-desc">Prevent WebRTC from exposing your real IP address</p>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="enableDNSProtection" checked>
+          DNS leak protection
+        </label>
+        <p class="setting-desc">Force DNS resolution through proxy tunnel</p>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>Appearance</h2>
+      
+      <div class="setting-item">
+        <label>
+          <select id="theme">
+            <option value="dark">Dark Mode</option>
+            <option value="light">Light Mode</option>
+            <option value="auto">System Default</option>
+          </select>
+          Theme
+        </label>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>Security</h2>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="killSwitch">
+          Kill Switch
+        </label>
+        <p class="setting-desc">Block all internet if VPN disconnects (experimental - may break some sites)</p>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="filterMalicious">
+          Block malicious proxies
+        </label>
+        <p class="setting-desc">Automatically filter out known malicious proxy servers</p>
+      </div>
+    </div>
+    
+    <div class="settings-section">
+      <h2>About</h2>
+      
+      <div class="info-item">
+        <strong>Version:</strong> 1.0.0
+      </div>
+      <div class="info-item">
+        <strong>Privacy Policy:</strong> This extension does NOT log or store any user activity
+      </div>
+      <div class="info-item">
+        <strong>Note:</strong> This is a proxy-based solution, not a full VPN. Traffic between browser and proxy is NOT encrypted unless using HTTPS proxies.
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button id="saveBtn" class="save-btn">Save Settings</button>
+      <button id="resetBtn" class="reset-btn">Reset to Default</button>
+    </div>
+  </div>
+  
+  <script src="settings.js" type="module"></script>
 </body>
 </html>
