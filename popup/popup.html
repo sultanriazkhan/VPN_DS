@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>VPN Extension</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free VPN - Secure Connection</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
-<body>
-    <!-- Your HTML content here -->
+<body class="dark-mode">
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">Free VPN</span>
+      </div>
+      <button id="settingsBtn" class="icon-btn" title="Settings">
+        ⚙️
+      </button>
+    </div>
+    
+    <!-- Connection Status -->
+    <div class="status-section">
+      <div id="connectionStatus" class="status-indicator disconnected">
+        <div class="status-dot"></div>
+        <span class="status-text">Disconnected</span>
+      </div>
+      <div id="ipDisplay" class="ip-display">
+        <span class="ip-label">Your IP:</span>
+        <span id="currentIp" class="ip-value">-.-.-.-</span>
+      </div>
+    </div>
+    
+    <!-- Connect Button -->
+    <button id="connectBtn" class="connect-btn">
+      <span class="btn-icon">🔒</span>
+      <span class="btn-text">Connect</span>
+    </button>
+    
+    <!-- Server Selection -->
+    <div class="server-section">
+      <div class="section-header">
+        <span>🌍 Select Server</span>
+        <button id="refreshServersBtn" class="refresh-btn">
+          🔄
+        </button>
+      </div>
+      <div id="serverList" class="server-list">
+        <div class="loading-spinner">Loading servers...</div>
+      </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="stats-section">
+      <div class="stat-item">
+        <div class="stat-label">Ping</div>
+        <div id="pingValue" class="stat-value">-- ms</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Data Saved</div>
+        <div id="dataValue" class="stat-value">0 MB</div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <a href="#" id="openSettingsLink">Advanced Settings</a>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+  
+  <script src="popup.js" type="module"></script>
 </body>
 </html>

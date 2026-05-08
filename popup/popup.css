@@ -1,1 +1,306 @@
-/* Empty file - paste your CSS code here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  color: #aaa;
+}
+
+.icon-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* Status Section */
+.status-section {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.status-indicator.disconnected {
+  background: rgba(244, 67, 54, 0.2);
+}
+
+.status-indicator.connected {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.status-indicator.connecting {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.disconnected .status-dot {
+  background: #f44336;
+  box-shadow: 0 0 5px #f44336;
+}
+
+.connected .status-dot {
+  background: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+.connecting .status-dot {
+  background: #ff9800;
+  box-shadow: 0 0 5px #ff9800;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+.ip-display {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.ip-value {
+  color: #fff;
+  font-family: monospace;
+}
+
+/* Connect Button */
+.connect-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.connect-btn.connect {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.connect-btn.disconnect {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Server Section */
+.server-section {
+  margin-bottom: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.refresh-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  color: #aaa;
+}
+
+.refresh-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.server-list {
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 12px;
+}
+
+.server-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #16213e;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.server-item:hover {
+  background: #1f2a4e;
+}
+
+.server-item.selected {
+  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+  border: 1px solid #667eea;
+}
+
+.server-info {
+  flex: 1;
+}
+
+.server-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.server-country {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.server-latency {
+  font-size: 12px;
+  font-family: monospace;
+  color: #4caf50;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  flex: 1;
+  background: #16213e;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #16213e;
+  font-size: 11px;
+  color: #666;
+}
+
+.footer a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar */
+.server-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.server-list::-webkit-scrollbar-track {
+  background: #16213e;
+  border-radius: 3px;
+}
+
+.server-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
